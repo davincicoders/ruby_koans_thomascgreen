@@ -10,7 +10,7 @@ class AboutObjects < EdgeCase::Koan
   end
 
   def test_objects_can_be_converted_to_strings
-    assert_equal __, 123.to_s
+    assert_equal "jason waz here", 123.to_s
     assert_equal __, nil.to_s
   end
 
@@ -51,6 +51,6 @@ class AboutObjects < EdgeCase::Koan
     copy = obj.clone
 
     assert_equal __, obj           != copy
-    assert_equal __, obj.object_id != copy.object_id
+    assert_equal false, obj.object_id != copy.object_id
   end
 end
