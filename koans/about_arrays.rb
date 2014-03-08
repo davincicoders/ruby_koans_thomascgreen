@@ -65,22 +65,22 @@ class AboutArrays < EdgeCase::Koan
     array = [1,2]
     array.push(:last)
 
-    assert_equal [1, 2, :last], array
+    assert_equal __, array
 
     popped_value = array.pop
-    assert_equal :last, popped_value
-    assert_equal [1, 2], array
+    assert_equal __, popped_value
+    assert_equal __, array
   end
 
   def test_shifting_arrays
     array = [1,2]
     array.unshift(:first)
 
-    assert_equal [:first, 1, 2], array
+    assert_equal __, array
 
     shifted_value = array.shift
-    assert_equal :first, shifted_value
-    assert_equal [1, 2], array
+    assert_equal __, shifted_value
+    assert_equal __, array
   end
 
 end
