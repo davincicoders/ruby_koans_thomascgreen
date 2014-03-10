@@ -60,7 +60,7 @@ class AboutArrays < EdgeCase::Koan
   end
 
   def test_pushing_and_popping_arrays
-    array = [1,2]
+    array = {1,2}
     array.push(:last)
 
     assert_equal __, array
