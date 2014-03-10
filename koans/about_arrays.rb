@@ -18,7 +18,7 @@ class AboutArrays < EdgeCase::Koan
     assert_equal [1, __], array
 
     array << 333
-    assert_equal __, array
+    assert_equal [5, 6], array
   end
 
   def test_accessing_array_elements
