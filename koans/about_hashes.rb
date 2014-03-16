@@ -3,14 +3,14 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 class AboutHashes < EdgeCase::Koan
   def test_creating_hashes
     empty_hash = Hash.new
-    assert_equal __, empty_hash.class
+    assert_equal Hash, empty_hash.class
     assert_equal({}, empty_hash)
-    assert_equal __, empty_hash.size
+    assert_equal 0, empty_hash.size
   end
 
   def test_hash_literals
     hash = { :one => "uno", :two => "dos" }
-    assert_equal __, hash.size
+    assert_equal 2, hash.size
   end
 
   def test_accessing_hashes
