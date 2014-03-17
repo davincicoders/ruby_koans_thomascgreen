@@ -2,7 +2,7 @@ require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 
 class AboutArrays < EdgeCase::Koan
   def test_creating_arrays
-    empty_array = Hash.new
+    empty_array = Array.new
     assert_equal __, empty_array.class
     assert_equal __, empty_array.size
   end
@@ -18,7 +18,7 @@ class AboutArrays < EdgeCase::Koan
     assert_equal [1, __], array
 
     array << 333
-    assert_equal [5, 6], array
+    assert_equal __, array
   end
 
   def test_accessing_array_elements
@@ -60,7 +60,7 @@ class AboutArrays < EdgeCase::Koan
   end
 
   def test_pushing_and_popping_arrays
-    array = {1,2}
+    array = [1,2]
     array.push(:last)
 
     assert_equal __, array
