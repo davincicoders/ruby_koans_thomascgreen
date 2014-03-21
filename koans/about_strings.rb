@@ -132,18 +132,18 @@ EOS
 
   def test_any_ruby_expression_may_be_interpolated
     string = "The square root of 5 is #{Math.sqrt(5)}"
-    assert_equal __, string
+    assert_equal 'The square root of 5 is 2.23606797749979', string
   end
 
   def test_you_can_get_a_substring_from_a_string
     string = "Bacon, lettuce and tomato"
-    assert_equal __, string[7,3]
-    assert_equal __, string[7..9]
+    assert_equal 'let', string[7,3]
+    assert_equal 'let', string[7..9]
   end
 
   def test_you_can_get_a_single_character_from_a_string
     string = "Bacon, lettuce and tomato"
-    assert_equal __, string[1]
+    assert_equal 'a', string[1]
 
     # Surprised?
   end
@@ -167,13 +167,13 @@ EOS
   def test_strings_can_be_split
     string = "Sausage Egg Cheese"
     words = string.split
-    assert_equal [__, __, __], words
+    assert_equal ['Sausage', 'Egg', 'Cheese'], words
   end
 
   def test_strings_can_be_split_with_different_patterns
     string = "the:rain:in:spain"
     words = string.split(/:/)
-    assert_equal [__, __, __, __], words
+    assert_equal ['the', 'rain', 'in', 'spain'], words
 
     # NOTE: Patterns are formed from Regular Expressions.  Ruby has a
     # very powerful Regular Expression library.  We will become
