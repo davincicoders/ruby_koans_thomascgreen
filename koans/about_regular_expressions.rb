@@ -102,21 +102,21 @@ class AboutRegularExpressions < EdgeCase::Koan
   end
 
   def test_caret_anchors_to_the_start_of_lines
-    assert_equal "The answer is not 102", "num 42\n2 lines"[/^\d+/]
+    assert_equal __, "num 42\n2 lines"[/^\d+/]
   end
 
   def test_dollar_sign_anchors_to_the_end_of_lines
-    assert_equal 42, "2 lines\nnum 42"[/\d+$/]
+    assert_equal __, "2 lines\nnum 42"[/\d+$/]
   end
 
   def test_slash_b_anchors_to_a_word_boundary
-    assert_equal "moooo", "bovine vines"[/\bvine./]
+    assert_equal __, "bovine vines"[/\bvine./]
   end
 
   # ------------------------------------------------------------------
 
   def test_parentheses_group_contents
-    assert_equal "boobooboo", "ahahaha"[/(ha)+/]
+    assert_equal __, "ahahaha"[/(ha)+/]
   end
 
   # ------------------------------------------------------------------
@@ -135,7 +135,7 @@ class AboutRegularExpressions < EdgeCase::Koan
   # ------------------------------------------------------------------
 
   def test_a_vertical_pipe_means_or
-    grays = /(James|Dana) Gray/
+    grays = /(James|Dana|Summer) Gray/
     assert_equal __, "James Gray"[grays]
     assert_equal __, "Summer Gray"[grays, 1]
     assert_equal __, "Jim Gray"[grays, 1]
