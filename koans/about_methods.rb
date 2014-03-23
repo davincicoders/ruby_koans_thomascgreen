@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 
 def my_global_method(a,b)
-  a - b
+  a + b
 end
 
 class AboutMethods < EdgeCase::Koan
@@ -46,13 +46,13 @@ class AboutMethods < EdgeCase::Koan
 
   # ------------------------------------------------------------------
 
-  def method_with_defaults(a, b=:default_value_goes_here)
+  def method_with_defaults(a, b=:default_value)
     [a, b]
   end
 
   def test_calling_with_default_values
-    assert_equal [1, __], method_with_defaults(1, 42)
-    assert_equal [1, __], method_with_defaults(1, 2)
+    assert_equal [1, :default_value], method_with_defaults(1)
+    assert_equal [1, 2], method_with_defaults(1, 2)
   end
 
   # ------------------------------------------------------------------
@@ -62,10 +62,10 @@ class AboutMethods < EdgeCase::Koan
   end
 
   def test_calling_with_variable_arguments
-    assert_equal __, method_with_var_args.class
-    assert_equal __, method_with_var_args
-    assert_equal __, method_with_var_args(:one)
-    assert_equal __, method_with_var_args(:one, :two)
+    assert_equal Array, method_with_var_args.class
+    assert_equal [], method_with_var_args
+    assert_equal [:one], method_with_var_args(:one)
+    assert_equal [:one, :two], method_with_var_args(:one, :two)
   end
 
   # ------------------------------------------------------------------
@@ -77,7 +77,7 @@ class AboutMethods < EdgeCase::Koan
   end
 
   def test_method_with_explicit_return
-    assert_equal __, method_with_explicit_return
+    assert_equal :return_value, method_with_explicit_return
   end
 
   # ------------------------------------------------------------------
@@ -88,7 +88,7 @@ class AboutMethods < EdgeCase::Koan
   end
 
   def test_method_without_explicit_return
-    assert_equal __, method_without_explicit_return
+    assert_equal :return_value, method_without_explicit_return
   end
 
   # ------------------------------------------------------------------
@@ -127,7 +127,7 @@ class AboutMethods < EdgeCase::Koan
 
   class Dog
     def name
-      "Ralph"
+      "Fido"
     end
 
     private
@@ -144,7 +144,7 @@ class AboutMethods < EdgeCase::Koan
 
   def test_calling_private_methods_in_other_objects
     rover = Dog.new
-    assert_raise(ArgumentGoesHere) do
+    assert_raise(___) do
       rover.tail
     end
   end
