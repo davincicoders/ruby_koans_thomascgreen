@@ -46,12 +46,12 @@ class AboutMethods < EdgeCase::Koan
 
   # ------------------------------------------------------------------
 
-  def method_with_defaults(a, b=:default_value)
+  def method_with_defaults(a, b=:default_value_goes_here)
     [a, b]
   end
 
   def test_calling_with_default_values
-    assert_equal [1, __], method_with_defaults(1)
+    assert_equal [1, __], method_with_defaults(1, 42)
     assert_equal [1, __], method_with_defaults(1, 2)
   end
 
@@ -127,7 +127,7 @@ class AboutMethods < EdgeCase::Koan
 
   class Dog
     def name
-      "Fido"
+      "Ralph"
     end
 
     private
@@ -144,7 +144,7 @@ class AboutMethods < EdgeCase::Koan
 
   def test_calling_private_methods_in_other_objects
     rover = Dog.new
-    assert_raise(___) do
+    assert_raise(ArgumentGoesHere) do
       rover.tail
     end
   end
