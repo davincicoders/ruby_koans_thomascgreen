@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 
 def my_global_method(a,b)
-  a + b
+  a - b
 end
 
 class AboutMethods < EdgeCase::Koan
